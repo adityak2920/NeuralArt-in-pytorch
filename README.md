@@ -4,9 +4,10 @@ This reprository is the code implementation in pytorch of paper on neural style 
 using pytorch VGG16 pretrained model and link for the paper [here](https://www.cvfoundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
 
 Some results after running this algorithm on Tesla K80 GPU for few minutes:
-![Untitled](https://user-images.githubusercontent.com/35501699/54220463-7c17a700-4517-11e9-8256-6c0c2f396ff9.jpg)
-![neuralart](https://user-images.githubusercontent.com/35501699/54220469-7de16a80-4517-11e9-9912-3e5384929ec8.jpg)
-![neural1](https://user-images.githubusercontent.com/35501699/54220476-80dc5b00-4517-11e9-8443-f6ba00eb947e.jpg)
+
+<img src="https://user-images.githubusercontent.com/35501699/54220463-7c17a700-4517-11e9-8256-6c0c2f396ff9.jpg" width="400" height="400">     <img src="https://user-images.githubusercontent.com/35501699/54220469-7de16a80-4517-11e9-9912-3e5384929ec8.jpg" width="400" height="400"> 
+          <img src="https://user-images.githubusercontent.com/35501699/54220476-80dc5b00-4517-11e9-8443-f6ba00eb947e.jpg" width="450" height="450"> 
+
 
 
 Other Images generated using same technique:
