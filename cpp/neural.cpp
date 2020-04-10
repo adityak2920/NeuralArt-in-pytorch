@@ -41,7 +41,7 @@ int main() {
     // As OpenCV reads image in BGR so converting to RGB, normaizing and then resizing the image
     cvtColor(image_bgr1, image_bgr1, COLOR_BGR2RGB);
     image_bgr1.convertTo(image_bgr1, CV_32FC3, 1.0f / 255.0f);
-    resize(image_bgr, style_image, {448, 448}, INTER_NEAREST);
+    resize(image_bgr1, style_image, {448, 448}, INTER_NEAREST);
 
 
 
@@ -50,14 +50,14 @@ int main() {
     content = content.permute({2, 0, 1});
     torch::Tensor content = normalize_transform(content).unsqueeze_(0);
     std::vector<torch::jit::IValue> content_tensor;
-    content_tensor.push_back(content.to(at::kCUDA));
+    content_tensor.push_back(content.to(device));
 
     // Preparing Data for Style Image
     auto style = torch::from_blob(style_image.data, {style_image.rows, style_image.cols, 3});
     style = style.permute({2, 0, 1});
     torch::Tensor style = normalize_transform(style).unsqueeze_(0);
     std::vector<torch::jit::IValue> style_tensor;
-    style_tensor.push_back(style.to(at::kCUDA));
+    style_tensor.push_back(style.to(device));
 
 
     auto target_tensor = content_tensor.clone();
